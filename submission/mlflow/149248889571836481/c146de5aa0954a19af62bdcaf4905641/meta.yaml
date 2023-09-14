@@ -1,0 +1,15 @@
+artifact_uri: /content/gdrive/My Drive/rl_class/week-1-intro-to-deep-rl-and-agent-training-environments-onenoc/submission/mlflow/149248889571836481/c146de5aa0954a19af62bdcaf4905641/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '149248889571836481'
+lifecycle_stage: active
+run_id: c146de5aa0954a19af62bdcaf4905641
+run_name: PPO_MultiGrid-CompetativeRedBlueDoor-v3-DTDE-Red-Single_22d1e_00000
+run_uuid: c146de5aa0954a19af62bdcaf4905641
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1694703949856
+status: 1
+tags: []
+user_id: unknown

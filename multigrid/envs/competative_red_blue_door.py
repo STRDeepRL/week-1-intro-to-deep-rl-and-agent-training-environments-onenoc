@@ -13,6 +13,7 @@ from multigrid.utils.obs import gen_obs_grid_encoding
 import numpy as np
 from functools import cached_property
 from gymnasium import spaces
+import pdb
 
 ### Typing
 
