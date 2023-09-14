@@ -11,7 +11,7 @@ from gymnasium.core import ObservationWrapper
 from .base import MultiGridEnv, AgentID, ObsType
 from .core.constants import Color, Direction, State, Type
 from .core.world_object import WorldObj
-
+import pdb
 
 class FullyObsWrapper(ObservationWrapper):
     """
@@ -223,10 +223,10 @@ class CompetativeRedBlueDoorWrapper(ObservationWrapper):
         dim = sum(self.dim_sizes)
         for agent in self.env.agents:
             # Retrieve the shape of the original "image" observation_space 
-            view_height, view_width, _ = "______________"
+            view_height, view_width, _ = agent.observation_space["image"].shape
             # Reassign the "image" observation_space for one-hot encoding observations
             agent.observation_space["image"] = spaces.Box(
-                low=0, high=1, shape=("______________", "______________", "______________"), dtype=np.uint8
+                low=0, high=1, shape=(view_height, view_width, dim), dtype=np.uint8
             )
 
     def observation(self, obs: dict[AgentID, ObsType]) -> dict[AgentID, ObsType]:
@@ -250,7 +250,7 @@ class CompetativeRedBlueDoorWrapper(ObservationWrapper):
                     observation["image"] = self.one_hot("______________", "______________")
             else:
                 # update the given ["image"] observation with self.one_hot() with the updated self.dim_sizes
-                agent_observations["image"] = self.one_hot("______________", "______________")
+                agent_observations["image"] = self.one_hot(agent_observations['image'], self.dim_sizes)
 
         return obs
 
